@@ -1,266 +1,390 @@
-README
-===========================
-该文件用来测试和展示书写README的各种markdown语法。GitHub的markdown语法在标准的markdown语法基础上做了扩充，称之为`GitHub Flavored Markdown`。简称`GFM`，GFM在GitHub上有广泛应用，除了README文件外，issues和wiki均支持markdown语法。
+<!DOCTYPE html>
+<html>
+<head>
+<title>MarkdownPad Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
 
-****
-###　　　　　　　　　　　　Author:Jelly
-###　　　　　　　　　 E-mail:879231132@qq.com
+/* RESET
+=============================================================================*/
 
-===========================
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
 
+/* BODY
+=============================================================================*/
 
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
 
-##<a name="index"/>目录
-* [横线](#line)
-* [标题](#title)
-* [文本](#text)
-    * 普通文本
-    * 单行文本
-    * 多行文本
-    * 文字高亮
-* [链接](#link) 
-    * 文字超链接
-        *  链接外部URL
-        *  链接本仓库里的URL
-    *  锚点
-    * [图片超链接](#piclink)
-* [图片](#pic)
-    * 来源于网络的图片
-    * GitHub仓库中的图片
-* [列表](#dot)
-    * 圆点列表
-    * 数字列表
-    * 复选框列表
-* [块引用](#blockquotes)
-* [代码](#code)
-* [表格](#table) 
-* [表情](#emoji)
+body>*:first-child {
+  margin-top: 0 !important;
+}
 
-<a name="line"/>
-##***、---、___显示虚横线
-***
----
-___
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
 
+/* BLOCKS
+=============================================================================*/
 
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
 
-<a name="title"/>
-#一级标题
-##二级标题
-###三级标题
-####四级标题
-#####五级标题
-######六级标题
+/* HEADERS
+=============================================================================*/
 
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
 
-##<a name="text"/>显示文本
-###普通文本
-这是一段普通的文本
-####关于换行
-直接回车不能换行，<br>
-可以使用\<br>。
-但是使用html标签就丧失了markdown的意义。  
-可以在上一行文本后面补两个空格，  
-这样下一行的文本就换行了。
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
 
-或者就是在两行文本直接加一个空行。
+h1 {
+  font-size: 28px;
+  color: #000;
+}
 
-也能实现换行效果，不过这个行间距有点大。
-###单行文本
-    Hello,大家好，我是果冻虾仁。
-###文本块
-    欢迎到访
-    很高兴见到您
-    祝您，早上好，中午好，下午好，晚安
-###部分文字高亮
-Thank `You` . Please `Call` Me `Coder`
-####高亮功能更适合做一篇文章的tag
-例如:<br>
-`java` `网络编程` `Socket` `全双工`
-####删除线
-这是一个 ~~删除线~~
-####斜体
-*斜体1*
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
 
-_斜体2_
-####粗体
-**粗体1**
+h3 {
+  font-size: 18px;
+}
 
-__粗体2__
+h4 {
+  font-size: 16px;
+}
 
-####组合使用粗体、斜体和删除线
-***斜粗体1***
+h5 {
+  font-size: 14px;
+}
 
-___斜粗体2___
+h6 {
+  color: #777;
+  font-size: 14px;
+}
 
-***~~斜粗体删除线1~~***
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
 
-~~***斜粗体删除线2***~~
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
 
-##<a name="link"/>链接
-###链接外部URL
-[我的博客](http://blog.csdn.net/guodongxiaren "悬停显示")   语法如下：
-```
-[我的博客](http://blog.csdn.net/guodongxiaren "悬停显示")
-```
-###链接的另一种写法
-[我的博客][id]  
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
 
-[id]:http://blog.csdn.net/guodongxiaren "悬停显示"   
-语法如下：
-```
-[我的博客][id]
-[id]:http://blog.csdn.net/guodongxiaren "悬停显示"
-```
-中括号[ ]里的id，可以是数字，字母等的组合。这两行可以不连着写，**一般把第二行的链接统一放在文章末尾**，id上下对应就行了。这样正文看起来会比较干净。
+/* LINKS
+=============================================================================*/
 
-###链接本仓库里的URL
-[Book](./Book)
-语法如下：
-```
-[Book](./Book)
-```
-如果文件要引用的文件不存在，则待点击的文本为红色。引用的文件存在存在则文本为蓝色。
-###锚点
-我们可以使用HTML的锚点标签（`#`）来设置锚点：[回到目录](#index)  
-但其实呢，每一个标题都是一个锚点，不需要用标签来指定，比如我们 [回到顶部](#TEST)
-不过不幸的是，由于对中文支持的不好，所以中文标题貌似是不能视作标签的。
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
 
-##<a name="pic"/>显示图片
-###来源于网络的图片
-![baidu](http://www.baidu.com/img/bdlogo.gif "百度logo")
-![](https://assets-cdn.github.com/images/modules/contact/goldstar.gif)
+a:hover {
+  text-decoration: underline;
+}
 
-###GitHub仓库中的图片
-![](https://github.com/guodongxiaren/ImageCache/raw/master/Logo/foryou.gif)
-###<a name="piclink">给图片加上超链接
-[![head]](http://blog.csdn.net/guodongxiaren/article/details/23690801)
-[head]:https://github.com/guodongxiaren/ImageCache/raw/master/Logo/jianxin.jpg "点击图片进入我的博客"
+/* LISTS
+=============================================================================*/
 
-##<a name="dot"/>列表
-###圆点列表
-* 昵称：果冻虾仁
-* 别名：隔壁老王
-* 英文名：Jelly
+ul, ol {
+  padding-left: 30px;
+}
 
-###更多圆点
-* 编程语言
-    * 脚本语言
-        * Python
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
 
-###数字列表
-####一般效果
-就是在数字后面加一个点，再加一个空格。不过看起来起来可能不够明显。    
-面向对象的三个基本特征：
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
 
-1. 封装
-2. 继承
-3. 多态
+dl {
+  padding: 0;
+}
 
-####数字列表自动排序
-也可以在第一行指定`1. `，而接下来的几行用星号`*`（或者继续用数字1. ）就可以了，它会自动显示成2、3、4……。    
-面向对象的七大原则：
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
 
-1. 开闭原则
-* 里氏转换原则
-* 依赖倒转原则
-* 接口隔离原则
-* 组合/聚合复用原则
-* “迪米特”法则
-* 单一直则原则
+dl dt:first-child {
+  padding: 0;
+}
 
-####多级数字列表
-和圆点的列表一样，数字列表也有多级结构：  
+dl dt>:first-child {
+  margin-top: 0px;
+}
 
-1. 这是一级的数字列表，数字1还是1
-   1. 这是二级的数字列表，阿拉伯数字在显示的时候变成了罗马数字
-      1. 这是三级的数字列表，数字在显示的时候变成了英文字母
-	    1. 四级的数字列表显示效果，就不再变化了，依旧是英文字母
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
 
-### 复选框列表
-- [x] C
-- [x] C++
-- [x] Java
-- [x] Qt
-- [x] Android
-- [ ] C#
-- [ ] .NET
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
 
-您可以使用这个功能来标注某个项目各项任务的完成情况。
-##<a name="blockquotes"/>块引用
+dl dd>:first-child {
+  margin-top: 0px;
+}
 
-###常用于引用文本
-####文本摘自《深入理解计算机系统》P27
-　令人吃惊的是，在哪种字节顺序是合适的这个问题上，人们表现得非常情绪化。实际上术语“little endian”（小端）和“big endian”（大端）出自Jonathan Swift的《格利佛游记》一书，其中交战的两个派别无法就应该从哪一端打开一个半熟的鸡蛋达成一致。因此，争论沦为关于社会政治的争论。只要选择了一种规则并且始终如一的坚持，其实对于哪种字节排序的选择都是任意的。
-><b>“端”（endian）的起源</b><br>
-以下是Jonathan Swift在1726年关于大小端之争历史的描述：<br>
-“……下面我要告诉你的是，Lilliput和Blefuscu这两大强国在过去36个月里一直在苦战。战争开始是由于以下的原因：我们大家都认为，吃鸡蛋前，原始的方法是打破鸡蛋较大的一端，可是当今的皇帝的祖父小时候吃鸡蛋，一次按古法打鸡蛋时碰巧将一个手指弄破了，因此他的父亲，当时的皇帝，就下了一道敕令，命令全体臣民吃鸡蛋时打破较小的一端，违令者重罚。”
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
 
-###块引用有多级结构
->数据结构
->>树
->>>二叉树
->>>>平衡二叉树
->>>>>满二叉树
+/* CODE
+=============================================================================*/
 
-##<a name="code"/>代码高亮
-```Java
-public static void main(String[]args){} //Java
-```
-```c
-int main(int argc, char *argv[]) //C
-```
-```Bash
-echo "hello GitHub"#Bash
-```
-```javascript
-document.getElementById("myH1").innerHTML="Welcome to my Homepage"; //javascipt
-```
-```cpp
-string &operator+(const string& A,const string& B) //cpp
-```
-##<a name="table"/>显示表格
-表头1  | 表头2
-------------- | -------------
-Content Cell  | Content Cell
-Content Cell  | Content Cell
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
 
-| 表头1  | 表头2|
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
 
-| 名字 | 描述          |
-| ------------- | ----------- |
-| Help      | Display the help window.|
-| Close     | Closes a window     |
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
 
-表格中也可以使用普通文本的删除线，斜体等效果
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
 
-| 名字 | 描述          |
-| ------------- | ----------- |
-| Help      | ~~Display the~~ help window.|
-| Close     | _Closes_ a window     |
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
 
-表格可以指定对齐方式
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
 
-| 左对齐 | 居中  | 右对齐 |
-| :------------ |:---------------:| -----:|
-| col 3 is      | some wordy text | $1600 |
-| col 2 is      | centered        |   $12 |
-| zebra stripes | are neat        |    $1 |
+/* QUOTES
+=============================================================================*/
 
-表格中嵌入图片
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
 
-| 图片 | 描述 |
-| ---- | ---- |
-![baidu](http://www.baidu.com/img/bdlogo.gif "百度logo") | baidu
+blockquote>:first-child {
+  margin-top: 0px;
+}
 
-##<a name="emoji"/>添加表情
-Github的Markdown语法支持添加emoji表情，输入不同的符号码（两个冒号包围的字符）可以显示出不同的表情。
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
 
-比如`:blush:`，可以显示:blush:。
+/* HORIZONTAL RULES
+=============================================================================*/
 
-具体每一个表情的符号码，可以查询GitHub的官方网页[http://www.emoji-cheat-sheet.com](http://www.emoji-cheat-sheet.com)。
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
 
-但是这个网页每次都打开**奇慢**。。所以我整理到了本repo中，大家可以直接在此查看[emoji](./emoji.md)。
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<p>http://images.google.com/images?num=30&amp;q=larry+bird</p>
+<p><a href="http://www.weixin.qq.com/" title="微信公众平台">baidu</a>  <a href="http://search.yahoo.com/" title="Yahoo Search">sina</a> or <a href="http://search.msn.com/" title="MSN Search">taobao</a>. </p>
+<p>I get 10 times more traffic from <a href="http://www.weixin.qq.com/" title="微信公众平台">Google</a> than from
+<a href="http://search.yahoo.com/" title="Yahoo Search">Yahoo</a> or <a href="http://search.msn.com/" title="MSN Search">MSN</a>.</p>
+<p>这是一个连接 <a href="http://www.weixin.qq.com/" title="微信公众平台">点我</a></p>
+<p><em>这是一个简单的测试</em></p>
+<hr />
+<p><em>这是一个简单的显示 总结下面单线显示字体比双线显示的大</em>
+  ====================</p>
+<table>
+    <tr>
+     <td><img src="https://mp.weixin.qq.com/misc/getheadimg?token=1050584170&fakeid=3072495331&r=905773"></td>
+    </tr>
+  </table>
+<p>http://images.google.com/images?num=30&amp;q=larry+bird</p>
+<p>&copy;<br />
+  dededededededede    scscscscscscsc</p>
+<p>最高阶标题
+  ==========</p>
+<p>第二阶标题</p>
+<hr />
+<p># H1标题
+  ## H2标题
+  ### H3标题
+  ####### H6标题</p>
+<blockquote>
+<p>This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
+consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
+Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</p>
+<p>Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
+id sem consectetuer libero luctus adipiscing.</p>
+<h2>这是一个标题。</h2>
+<p>参数：   这是第一行列表项。
+2.   这是第二行列表项。</p>
+<p>给出一些例子代码：</p>
+<pre><code>return shell_exec(&quot;echo $input | $markdown_script&quot;);
+</code></pre>
+
+</blockquote>
+<ul>
+<li>Red</li>
+<li>Green</li>
+<li>Blue</li>
+<li>
+</li>
+<li>
+<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,
+viverra nec, fringilla in, laoreet vitae, risus.</p>
+</li>
+<li>
+<p>Donec sit amet nisl. Aliquam semper ipsum sit amet velit.
+Suspendisse id sem consectetuer libero luctus adipiscing.</p>
+</li>
+<li>
+<p>This is a list item with two paragraphs.</p>
+<p>This is the second paragraph in the list item. You're
+only required to indent the first line. Lorem ipsum dolor
+sit amet, consectetuer adipiscing elit.</p>
+</li>
+<li>
+<p>Another item in the same list.</p>
+</li>
+<li>
+<p>A list item with a blockquote:</p>
+<blockquote>
+<p>This is a blockquote</p>
+<p>inside a list item.</p>
+</blockquote>
+</li>
+<li>
+<p>下面为实例代码：</p>
+<pre><code>&lt;?php 
+
+    //这是一个简单的php代码段
+    echo phpinfo();
+
+?&gt;
+</code></pre>
+
+</li>
+<li>
+<p>What a great season.</p>
+</li>
+</ul>
+<p>1986. What a great season.</p>
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<p>这是一个链接 <a href="http://www.sina.com" title="新浪">点我</a></p>
+<p>This is <a href="http://example.com/" title="Title">an example</a> inline link.</p>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
